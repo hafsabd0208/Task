@@ -6,11 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateLgasTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+   
     public function up()
     {
         Schema::create('lgas', function (Blueprint $table) {
@@ -21,11 +17,7 @@ class CreateLgasTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+    
     public function down()
     {
         Schema::dropIfExists('lgas');

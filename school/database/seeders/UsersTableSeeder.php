@@ -3,7 +3,6 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
 use App\Helpers\Qs;
 use Illuminate\Support\Str;
 
@@ -21,51 +20,41 @@ class UsersTableSeeder extends Seeder
 
     protected function createNewUsers()
     {
-        $password = Hash::make('cj'); // Default user password
+      
 
         $d = [
 
-            ['name' => 'CJ Inspired',
-                'email' => 'cj@cj.com',
-                'username' => 'cj',
+            ['name' => 'Hafsa',
+                'email' => 'Hafsa.02@gmail.com',
+                'username' => 'hafsa',
                 'password' => bcrypt('12345678'),
-                'user_type' => 'super_admin',
+                'user_type' => 'admin',
                 'code' => strtoupper(Str::random(10)),
                 'remember_token' => Str::random(10),
             ],
-
-            ['name' => 'Admin KORA',
-            'email' => 'admin@admin.com',
-            'password' =>bcrypt('12345678'),
-            'user_type' => 'admin',
-            'username' => 'admin',
-            'code' => strtoupper(Str::random(10)),
-            'remember_token' => Str::random(10),
-            ],
-
-            ['name' => 'Teacher Chike',
-                'email' => 'teacher@teacher.com',
+            
+            ['name' => 'Maria',
+                'email' => 'Maria.12@gmail.com',
                 'user_type' => 'teacher',
-                'username' => 'teacher',
-                'password' => bcrypt('12345678'),
+                'username' => 'mari',
+                'password' => bcrypt('12345678920'),
                 'code' => strtoupper(Str::random(10)),
                 'remember_token' => Str::random(10),
             ],
-
-            ['name' => 'Parent Kaba',
-                'email' => 'parent@parent.com',
+            ['name' => 'Sonia',
+                'email' => 'Sonia.10@gmail.com',
                 'user_type' => 'parent',
-                'username' => 'parent',
-                'password' => bcrypt('12345678'),
+                'username' => 'mari',
+                'password' => bcrypt('123456789'),
                 'code' => strtoupper(Str::random(10)),
                 'remember_token' => Str::random(10),
             ],
 
-            ['name' => 'Accountant Jeff',
-                'email' => 'accountant@accountant.com',
+            ['name' => 'Samah',
+                'email' => 'Samah.04@gmail.com',
                 'user_type' => 'accountant',
-                'username' => 'accountant',
-                'password' => bcrypt('12345678'),
+                'username' => 'sam',
+                'password' => bcrypt('012345678'),
                 'code' => strtoupper(Str::random(10)),
                 'remember_token' => Str::random(10),
             ],
@@ -76,7 +65,7 @@ class UsersTableSeeder extends Seeder
     protected function createManyUsers(int $count)
     {
         $data = [];
-        $user_type = Qs::getAllUserTypes(['super_admin', 'librarian', 'student']);
+        $user_type = Qs::getAllUserTypes(['admin', 'librarian', 'student']);
 
         for($i = 1; $i <= $count; $i++){
 
@@ -86,7 +75,7 @@ class UsersTableSeeder extends Seeder
                     'email' => $user_type[$k].$i.'@'.$user_type[$k].'.com',
                     'user_type' => $user_type[$k],
                     'username' => $user_type[$k].$i,
-                    'password' => Hash::make($user_type[$k]),
+                    'password' => $user_type[$k],
                     'code' => strtoupper(Str::random(10)),
                     'remember_token' => Str::random(10),
                 ];

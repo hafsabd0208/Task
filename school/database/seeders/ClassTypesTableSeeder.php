@@ -7,11 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 class ClassTypesTableSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
+    
     public function run()
     {
         DB::table('class_types')->delete();

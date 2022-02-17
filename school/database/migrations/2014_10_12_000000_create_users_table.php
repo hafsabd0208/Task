@@ -7,11 +7,7 @@ use App\Helpers\Qs;
 
 class CreateUsersTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+    
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
@@ -21,11 +17,9 @@ class CreateUsersTable extends Migration
             $table->string('code', 100)->unique();
             $table->string('username', 100)->nullable()->unique();
             $table->string('user_type');
-            $table->string('dob')->nullable();
             $table->string('gender')->nullable();
             $table->string('photo')->default(Qs::getDefaultUserImage());
             $table->string('phone')->nullable();
-            $table->string('phone2')->nullable();
             $table->unsignedInteger('bg_id')->nullable();
             $table->unsignedInteger('state_id')->nullable();
             $table->unsignedInteger('lga_id')->nullable();

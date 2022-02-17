@@ -6,11 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateBloodGroupsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+    
     public function up()
     {
         Schema::create('blood_groups', function (Blueprint $table) {
@@ -20,11 +16,7 @@ class CreateBloodGroupsTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+    
     public function down()
     {
         Schema::dropIfExists('blood_groups');

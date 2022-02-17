@@ -9,11 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 class BloodGroupsTableSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
+    
     public function run()
     {
         DB::table('blood_groups')->delete();
